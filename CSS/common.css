@@ -1,0 +1,69 @@
+body{
+    background-color: #605678 !important;
+}
+/* css of Header */
+.header{
+    display: flex;
+    background-color: #605678 !important;
+}
+#menu-button{
+    border: none;
+}
+#menu-button:focus{
+    box-shadow: none;
+}
+.logo{
+    display: flex;
+    border: 3px solid whitesmoke;
+    box-shadow: inset 0 0 10px #605678;
+    padding: 8px;
+    margin: 15px 0 15px 15px;
+    border-radius: 10px;
+    height: 50px;
+    text-align: center; 
+}
+.logo-BP{
+    justify-content: center;
+    align-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: whitesmoke;
+}
+.logo:hover{
+    box-shadow: 0px 0px 15px 5px rgba(188, 132, 132, 0.5); /* Shadow on hover */
+}
+.navbar-nav{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: 300px;
+}
+.nav-link:hover{
+    box-shadow: 0 0 15px 5px rgba(188, 132, 132, 0.5);
+    color: #FFBF61 !important;
+    border-radius: 8px;
+}
+.nav-link{
+    color: whitesmoke !important;
+}
+
+/* Footer */
+.footer-credits{
+    color: antiquewhite;
+}
+.social-links{
+    color: antiquewhite;
+    text-decoration: none;
+}
+.social-links:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width: 768px){
+    .footer-credits{
+        margin-left: 20px;
+    }
+    #footer-link-details{
+        margin-left: 55px;
+    }
+}
