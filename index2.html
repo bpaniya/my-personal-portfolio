@@ -847,22 +847,8 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Open Contact Form
-        function openContactForm(){
-            let contactMeBtn = document.getElementById("open_cnct_mdl");
-            let contactForm = document.getElementById("contact_form");
-            let overlay = document.querySelector(".overlay");
-            contactMeBtn.addEventListener('click', () => {
-                contactForm.style.display = 'block';
-                console.log('shdoisaho')
-                overlay.style.display = 'block';
-            })
-        };
-
-            openContactForm();
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -878,7 +864,7 @@
         });
 
         // Navbar background change on scroll
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
                 navbar.style.background = 'rgba(15, 15, 35, 0.98)';
@@ -903,7 +889,7 @@
         }, observerOptions);
 
         // Observe all cards for animation
-        document.querySelectorAll('.skill-card, .project-card, .about-card, .contact-card').forEach(card => {
+        document.querySelectorAll('.skill-card, .project-card, .about-card, .contact-card, .contact-form-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'all 0.6s ease';
@@ -912,7 +898,7 @@
 
         // Typing effect for hero section
         const heroTitle = document.querySelector('.hero h1 span');
-        const text = 'Bhuvan Paniya';
+        const text = 'Your Name';
         let index = 0;
 
         function typeWriter() {
@@ -932,12 +918,100 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallax = scrolled * 0.5;
-
+            
             document.querySelectorAll('.floating-element').forEach((element, index) => {
                 const speed = 0.2 + (index * 0.1);
                 element.style.transform = `translateY(${parallax * speed}px)`;
             });
         });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.classList.add('btn-loading');
+            submitBtn.innerHTML = '';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission (replace with actual form handler)
+            setTimeout(() => {
+                // Reset button
+                submitBtn.classList.remove('btn-loading');
+                submitBtn.innerHTML = originalText;
+                
+                // Show success message
+                showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+                
+                // Reset form
+                this.reset();
+                
+                // In a real implementation, you would send the data to your server:
+                // fetch('/contact', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //     },
+                //     body: JSON.stringify(data)
+                // })
+                // .then(response => response.json())
+                // .then(result => {
+                //     if (result.success) {
+                //         showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+                //         this.reset();
+                //     } else {
+                //         showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+                //     }
+                // })
+                // .catch(error => {
+                //     showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+                // });
+                
+            }, 2000); // Simulate network delay
+        });
+
+        function showMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Form validation enhancement
+        const inputs = document.querySelectorAll('.form-control-custom');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#ef4444';
+                } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                }
+            });
+            
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#4facfe';
+            });
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
     </script>
 </body>
 
