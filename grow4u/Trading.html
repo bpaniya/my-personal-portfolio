@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow4you - Trading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/pages.css">
+  <link rel="stylesheet" href="./css/trading.css">
+</head>
+
+<body>
+  <div id="model_overlay" class="modal-overlay" style="display: none;"></div>
+  <div id="trade_model_overlay" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1040;"></div>
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+      <a href="./index.html"><img src="./Images/Grow.png" alt="Grow4you_logo" height="40px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 navigations_bar">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./About.html">About Us</a>
+          </li>
+          <li>
+            <a class="nav-link active" href="./Contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="trading">
+          <a href="#"><button class="login_signup_button" id="login_btn_navbar">Login/Signup</button></a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sign_mod_main_">
+    <div class="sign-up_modal" style="display: none;" id="sign_up_modal">
+      <div class="close__button_for_signup_modal">
+        <span class="close_button_for_signup_modal" id="closebutton_for_signup_modal">
+          <img src="./Images/Loginsignup-imgs/x.svg" alt="" height="30px">
+        </span>
+      </div>
+      <div class="gif_iamges">
+        <img src="./Images/Loginsignup-imgs/Signup-modal-top.webp" alt="image1" class="image1" />
+        <img src="./Images/Loginsignup-imgs/sighn-up modal center.webp" alt="image1" class="image2" />
+        <img src="./Images/Loginsignup-imgs/sign-up modal- end.webp" alt="image1" class="image3" />
+      </div>
+      <div class="context_signup">
+        <div class="heading_signup_modal">
+          <h3 class="Enter_your_mobile_number">Enter your mobile number</h3>
+        </div>
+        <div>
+          <p class="OTP_text">We’ll send you an OTP</p>
+        </div>
+        <div class="style_phone__input__wrapper__lDd4q">
+          <span class="style_phone__input__country__code__5fclX">+91</span>
+          <span class="style_input__wrapper__sTVp9"><input placeholder="Phone number" screen="login" name="mobile"
+              type="tel" autocomplete="off" maxlength="10" class="style_input__RNEjN style_input__login__1FjNw"
+              value=""></span>
+        </div>
+        <div>
+          <p class="terms_conditions">By continuing, you accept that you are 18+ years of
+            age & agree to the
+            <a href="#" class="terms__conditions">Terms&Conditions</a>
+          </p>
+        </div>
+        <div class="Get_OTP_div">
+          <a href="#"><button type="submit" class="btn btn-primary Get_OTP_button">Get
+              OTP</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-scroller py-1 mb-3 border-bottom nav_bar_sub_sec_eve">
+    <nav class="nav nav-underline justify-content-between gap-4">
+      <a class="nav-item nav-link link-body-emphasis active" href="#" id="sports_btn">Sports</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#" id="elections_btn">Elections</a>
+      <a class="nav-item nav-link link-body-emphasis " href="#" id="crypto_btn">Crypto</a>
+    </nav>
+  </div>
+  
+  <div class="gm_trd_crd" id="crypto_gme" style="display: none;">
+    <div class="card2">
+      <img src="./Images/bitcoin.jpg" alt="">
+      <div class="card__content">
+        <p class="card__title">Bitcoin Trade</p>
+        <p class="card__description">Bitcoin will cross $70,000 by 5:00 PM today.</p>
+        <div class="buttons2" data-trade-type="Bitcoin Trade" data-image-src="./Images/bitcoin.jpg">
+          <button class="button_yes2 trade_trigger" data-choice="yes" data-yes-price="5" data-no-price="5" data-win-amount="10">Yes ₹5</button>
+          <button class="button_no2 trade_trigger" data-choice="no" data-yes-price="5" data-no-price="5" data-win-amount="10">No ₹5</button>
+        </div>
+      </div>
+    </div>
+    <div class="card2">
+      <img src="./Images/bitcoin.jpg" alt="">
+      <div class="card__content">
+        <p class="card__title">Bitcoin Trade</p>
+        <p class="card__description">Ethereum will cross $3,000 by tomorrow.</p>
+        <div class="buttons2" data-trade-type="Bitcoin Trade" data-image-src="./Images/bitcoin.jpg">
+          <button class="button_yes2 trade_trigger" data-choice="yes" data-yes-price="5" data-no-price="5" data-win-amount="10">Yes ₹5</button>
+          <button class="button_no2 trade_trigger" data-choice="no" data-yes-price="5" data-no-price="5" data-win-amount="10">No ₹5</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gm_trd_crd" id="election_gme" style="display: none;">
+    <div class="card2">
+      <img src="./Images/bitcoin.jpg" alt="">
+      <div class="card__content">
+        <p class="card__title">Election Trade</p>
+        <p class="card__description">Party A will win more than 150 seats.</p>
+        <div class="buttons2" data-trade-type="Election Trade" data-image-src="./Images/bitcoin.jpg">
+          <button class="button_yes2 trade_trigger" data-choice="yes" data-yes-price="5" data-no-price="5" data-win-amount="10">Yes ₹5</button>
+          <button class="button_no2 trade_trigger" data-choice="no" data-yes-price="5" data-no-price="5" data-win-amount="10">No ₹5</button>
+        </div>
+      </div>
+    </div>
+    <div class="card2">
+      <img src="./Images/bitcoin.jpg" alt="">
+      <div class="card__content">
+        <p class="card__title">Election Trade</p>
+        <p class="card__description">Current PM will be re-elected in 2025.</p>
+        <div class="buttons2" data-trade-type="Election Trade" data-image-src="./Images/bitcoin.jpg">
+          <button class="button_yes2 trade_trigger" data-choice="yes" data-yes-price="5" data-no-price="5" data-win-amount="10">Yes ₹5</button>
+          <button class="button_no2 trade_trigger" data-choice="no" data-yes-price="5" data-no-price="5" data-win-amount="10">No ₹5</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gm_trd_crd" id="sports_gme" style="display: grid;">
+    <div class="card2">
+      <img src="./Images/bitcoin.jpg" alt="">
+      <div class="card__content">
+        <p class="card__title">Sports Trade</p>
+        <p class="card__description">Team India will win the next T20 match against Pakistan.</p>
+        <div class="buttons2" data-trade-type="Sports Trade" data-image-src="./Images/bitcoin.jpg">
+          <button class="button_yes2 trade_trigger" data-choice="yes" data-yes-price="5" data-no-price="5" data-win-amount="10">Yes ₹5</button>
+          <button class="button_no2 trade_trigger" data-choice="no" data-yes-price="5" data-no-price="5" data-win-amount="10">No ₹5</button>
+        </div>
+      </div>
+    </div>
+    <div class="card2">
+      <img src="./Images/bitcoin.jpg" alt="">
+      <div class="card__content">
+        <p class="card__title">Sports Trade</p>
+        <p class="card__description">Rafael Nadal will win the next Grand Slam.</p>
+        <div class="buttons2" data-trade-type="Sports Trade" data-image-src="./Images/bitcoin.jpg">
+          <button class="button_yes2 trade_trigger" data-choice="yes" data-yes-price="5" data-no-price="5" data-win-amount="10">Yes ₹5</button>
+          <button class="button_no2 trade_trigger" data-choice="no" data-yes-price="5" data-no-price="5" data-win-amount="10">No ₹5</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer_bottom">
+      <p>&copy; 2025 Grow4you. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div class="trading_popup" id="trading_popup_" style="display: none; position: fixed; bottom: 0; right: 0%; width: 100%; max-width: 500px; background: white; border-top-left-radius: 15px; border-top-right-radius: 15px; padding: 20px; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); z-index: 1050;">
+    <div class="trading_popup_roll">
+      <div class="close_btn_m" id="close-btn-m">
+        <button id="trading_closePopup">X</button>
+        <div class="clz_bar"></div>
+      </div>
+      <div class="trading_popupTitle_M_">
+        <img id="trading_popupImage" src="" alt="">
+        <h5 id="trading_popupTitle">Trade Question Placeholder</h5>
+      </div>
+      <div class="Trading_bid_y_n d-flex justify-content-around my-3">
+        <div class="Trading_bid_y" id="bid_yes_button">
+          <span id="_yes">Yes ₹5</span>
+        </div>
+        <div class="Trading_bid_n" id="bid_no_button">
+          <span id="_no">No ₹5</span>
+        </div>
+      </div>
+
+      <div class="Quantity_multiplier">
+        <div class="Quantity_inidcator">
+          <h5>Quantity</h5>
+          <div class="quantity-m">
+            <span class="quantity-selector-quantity" id="quantity">1</span>
+          </div>
+        </div>
+        <div class="quantity-selector d-flex align-items-center">
+          <button class="quantity-selector-decrease btn btn-sm btn-outline-secondary" id="decrease">-</button>
+          <input type="range" class="qunty_incre form-range mx-2" id="inc_dec_scrol" min="1" max="100" value="1">
+          <button class="quantity-selector-increase btn btn-sm btn-outline-secondary" id="increase">+</button>
+        </div>
+        <div class="win_get w-100 my-4 d-flex flex-row justify-content-between">
+          <div class="put_bid">
+            <span id="put_bid_">₹5</span>
+            <br>
+            <span>You put</span>
+          </div>
+          <div class="put_get text-end">
+            <span id="put_get_">₹10</span>
+            <br>
+            <span>You Get</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-confirmation-container my-3">
+      <div class="slider-container" style="position: relative; height: 40px; background-color: #e9ecef; border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <span id="txt-slde-cnfrm">Slide to confirm bid</span>
+        <div class="slider_btn_to_cnfrm " id="slider-btn-to-cnfrm" style="position: absolute; left: 0; width: 60px; height: 100%; background-color: #007bff; color: white; display: flex; align-items: center; justify-content: center; border-radius: 20px; cursor: grab; touch-action: none;">&gt;&gt;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive"
+    aria-atomic="true" id="bid_confirmation_msg" data-bs-delay="3000" style="position: fixed; top: 20px; right: 20px; z-index: 1060;">
+    <div class="d-flex">
+      <div class="toast-body">
+        Transaction Successful!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+        aria-label="Close"></button>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // --- Trading Logic ---
+    document.addEventListener("DOMContentLoaded", function () {
+      const tradingPopup = document.getElementById("trading_popup_");
+      const tradeOverlay = document.getElementById("trade_model_overlay");
+      const closePopupBtn = document.getElementById("trading_closePopup");
+      const tradeTriggers = document.querySelectorAll(".trade_trigger");
+      const quantityEl = document.getElementById("quantity");
+      const bidEl = document.getElementById("put_bid_");
+      const getEl = document.getElementById("put_get_");
+      const increaseBtn = document.getElementById("increase");
+      const decreaseBtn = document.getElementById("decrease");
+      const rangeSlider = document.getElementById("inc_dec_scrol");
+      const bidYesButton = document.getElementById("bid_yes_button");
+      const bidNoButton = document.getElementById("bid_no_button");
+      
+      let currentPriceYes = 5;
+      let currentPriceNo = 5;
+      let currentWinAmount = 10;
+      let currentChoice = 'yes'; 
+
+      // --- Helper: Update Amounts ---
+      function updateAmounts() {
+        const quantity = parseInt(quantityEl.textContent) || 1;
+        const price = currentChoice === 'yes' ? currentPriceYes : currentPriceNo;
+        
+        const totalBid = price * quantity;
+        const totalGet = currentWinAmount * quantity;
+        
+        bidEl.textContent = `₹${totalBid}`;
+        getEl.textContent = `₹${totalGet}`;
+      }
+      
+      // --- Helper: Highlight Buttons (Relies on existing CSS in linked files) ---
+      function highlightChoice(choice) {
+        // NOTE: The classes 'Trading_bid_y_clr_ad' and 'Trading_bid_n_clr_ad' are assumed 
+        // to be defined in one of your linked CSS files (e.g., trading.css).
+        bidYesButton.classList.remove('Trading_bid_y_clr_ad');
+        bidNoButton.classList.remove('Trading_bid_n_clr_ad');
+
+        if (choice === 'yes') {
+            bidYesButton.classList.add('Trading_bid_y_clr_ad');
+        } else {
+            bidNoButton.classList.add('Trading_bid_n_clr_ad');
+        }
+      }
+
+      // --- 1. Show Popup on Trade Button Click ---
+      tradeTriggers.forEach(button => {
+        button.addEventListener("click", function () {
+          const cardContent = this.closest('.buttons2');
+          const description = this.closest('.card__content').querySelector('.card__description').textContent;
+          const choice = this.getAttribute('data-choice');
+          
+          currentPriceYes = parseInt(button.getAttribute('data-yes-price')) || 5;
+          currentPriceNo = parseInt(button.getAttribute('data-no-price')) || 5;
+          currentWinAmount = parseInt(button.getAttribute('data-win-amount')) || 10;
+          
+          document.getElementById('trading_popupTitle').textContent = description;
+          document.getElementById('_yes').textContent = `Yes ₹${currentPriceYes}`;
+          document.getElementById('_no').textContent = `No ₹${currentPriceNo}`;
+
+          currentChoice = choice;
+          quantityEl.textContent = '1';
+          rangeSlider.value = '1';
+          
+          highlightChoice(currentChoice);
+          updateAmounts();
+
+          // Show the popup and overlay using inline style manipulation
+          tradingPopup.style.display = 'block';
+          tradeOverlay.style.display = 'block';
+          // No 'no-scroll' class added as CSS is restricted
+        });
+      });
+      
+      // --- Internal Yes/No Button Clicks (Inside Modal) ---
+      bidYesButton.addEventListener('click', function() {
+          currentChoice = 'yes';
+          highlightChoice('yes');
+          updateAmounts();
+      });
+
+      bidNoButton.addEventListener('click', function() {
+          currentChoice = 'no';
+          highlightChoice('no');
+          updateAmounts();
+      });
+
+      // --- Close Popup ---
+      function closeTradePopup() {
+        // Hide the popup and overlay using inline style manipulation
+        tradingPopup.style.display = 'none';
+        tradeOverlay.style.display = 'none';
+        resetSliderConfirmation();
+      }
+
+      closePopupBtn.addEventListener('click', closeTradePopup);
+      tradeOverlay.addEventListener('click', closeTradePopup);
+
+      // --- Quantity Controls ---
+      increaseBtn.addEventListener('click', function () {
+        let quantity = parseInt(quantityEl.textContent);
+        if (quantity < 100) {
+          quantity++;
+          quantityEl.textContent = quantity;
+          rangeSlider.value = quantity;
+          updateAmounts();
+        }
+      });
+
+      decreaseBtn.addEventListener('click', function () {
+        let quantity = parseInt(quantityEl.textContent);
+        if (quantity > 1) {
+          quantity--;
+          quantityEl.textContent = quantity;
+          rangeSlider.value = quantity;
+          updateAmounts();
+        }
+      });
+
+      rangeSlider.addEventListener('input', function () {
+        const quantity = parseInt(this.value);
+        quantityEl.textContent = quantity;
+        updateAmounts();
+      });
+
+      // --- 2. Slider Confirmation Logic ---
+      const slider = document.getElementById("slider-btn-to-cnfrm");
+      const sliderContainer = document.querySelector(".slider-container");
+      const txtSlide = document.getElementById("txt-slde-cnfrm");
+      const toastEl = document.getElementById("bid_confirmation_msg");
+      let isSliding = false;
+
+      function resetSliderConfirmation() {
+        slider.style.left = `0px`;
+        txtSlide.style.display = "block";
+        isSliding = false;
+        slider.style.cursor = 'grab';
+      }
+
+      function submitBidSimulation() {
+        // Show the success toast (using Bootstrap's JS)
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastEl);
+        toastEl.querySelector('.toast-body').textContent = 'Transaction Successful! Bid Confirmed.';
+        toastEl.classList.remove('bg-danger');
+        toastEl.classList.add('bg-success');
+        toastBootstrap.show();
+
+        closeTradePopup();
+      }
+
+      function startSliding(e) {
+        e.preventDefault(); 
+        isSliding = true;
+        slider.style.cursor = 'grabbing';
+        
+        const initialX = e.touches ? e.touches[0].clientX : e.clientX;
+        const sliderInitialLeft = slider.offsetLeft;
+
+        function moveSlider(e) {
+          if (!isSliding) return;
+          const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+          const offsetX = currentX - initialX;
+          let newPosition = sliderInitialLeft + offsetX;
+
+          // Restrict movement to bounds
+          const maxSlide = sliderContainer.offsetWidth - slider.offsetWidth;
+          if (newPosition < 0) newPosition = 0;
+          if (newPosition > maxSlide) newPosition = maxSlide;
+
+          slider.style.left = `${newPosition}px`;
+
+          if (newPosition >= maxSlide - 5) { 
+            stopSliding(true); 
+          }
+        }
+
+        function stopSliding(confirmed = false) {
+          isSliding = false;
+          slider.style.cursor = 'grab';
+          document.removeEventListener("mousemove", moveSlider);
+          document.removeEventListener("mouseup", stopSliding);
+          document.removeEventListener("touchmove", moveSlider);
+          document.removeEventListener("touchend", stopSliding);
+          
+          if (confirmed) {
+             submitBidSimulation();
+          } else {
+             resetSliderConfirmation();
+          }
+        }
+
+        document.addEventListener("mousemove", moveSlider);
+        document.addEventListener("mouseup", stopSliding);
+        document.addEventListener("touchmove", moveSlider);
+        document.addEventListener("touchend", stopSliding);
+      }
+
+      slider.addEventListener("mousedown", startSliding);
+      slider.addEventListener("touchstart", startSliding, { passive: false });
+    });
+
+
+    // --- Navigation Logic (Ensures other functionality works) ---
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = {
+        elections_btn: "election_gme",
+        crypto_btn: "crypto_gme",
+        sports_btn: "sports_gme"
+      };
+      
+      function handleButtonClick(buttonId) {
+        // Hide all content sections using inline style
+        Object.values(buttons).forEach(contentId => {
+          document.getElementById(contentId).style.display = "none";
+        });
+
+        // Toggle "active" class on sub-nav links
+        Object.keys(buttons).forEach(btnId => {
+          document.getElementById(btnId).classList.remove("active");
+        });
+
+        // Show the clicked button's content
+        document.getElementById(buttons[buttonId]).style.display = "grid";
+
+        document.getElementById(buttonId).classList.add("active");
+      }
+
+      Object.keys(buttons).forEach(buttonId => {
+        document.getElementById(buttonId).addEventListener("click", function (e) {
+          e.preventDefault();
+          handleButtonClick(buttonId);
+        });
+      });
+      
+      // Set initial state (Sports is active by default in HTML)
+      document.getElementById('election_gme').style.display = "none";
+      document.getElementById('crypto_gme').style.display = "none";
+      document.getElementById('sports_gme').style.display = "grid";
+    });
+
+    // --- Login/Signup Modal Logic (Ensures other functionality works) ---
+    document.addEventListener("DOMContentLoaded", function () {
+      var signup_modal = document.getElementById("sign_up_modal");
+      var signup_btn = document.getElementById("login_btn_navbar");
+      var closing_btn = document.getElementById("closebutton_for_signup_modal");
+      var overlay = document.getElementById("model_overlay");
+
+      if (signup_btn) {
+        signup_btn.onclick = function (e) {
+          e.preventDefault();
+          signup_modal.style.display = "flex";
+          overlay.style.display = "block";
+        };
+      }
+
+      if (closing_btn) {
+        closing_btn.onclick = function () {
+          signup_modal.style.display = "none";
+          overlay.style.display = "none"
+        };
+      }
+
+      if (overlay) {
+        overlay.onclick = function () {
+          overlay.style.display = "none"
+          signup_modal.style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

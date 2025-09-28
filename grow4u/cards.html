@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Online Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+
+        .card img {
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .traders_online {
+            font-size: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .button_yes {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            font-family: "Poppins", serif;
+            font-weight: 600;
+        }
+
+        .button_no {
+            background-color: white;
+            color: red;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            font-family: "Poppins", serif;
+            font-weight: 600;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .button_yes:hover {
+            background-color: green;
+        }
+
+        .button_no:hover {
+            background-color: red;
+            color: white;
+            border: none;
+            box-shadow: none;
+        }
+
+        .trading_cards{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .context_trading_cards {
+            font-size: 16px;
+            text-align: start;
+            font-family: "Poppins", serif;
+            font-weight: 600;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .trading_context_hed {
+            width: 150px;
+            display: flex;
+        }
+
+        .trading_context_hed_main {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        /* From Uiverse.io by gharsh11032000 */ 
+.card2 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top: 15%;
+  margin-left: 15%;
+}
+
+.card2 img {
+  width: 100%;
+  height: 100%;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card2:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card2:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+.buttons2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.button_yes2{
+    border: none;
+    color: green;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.button_no2{
+    border: none;
+    color: red;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.button_yes2:hover{
+    font-weight: bold;
+}
+.button_no2:hover{
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+    <div class="trading_cards">
+        <div class="card">
+            <p class="traders_online">24000 traders</p>
+            <img src="./Images/handshake_men_01.svg" alt="Trade Image"> <!-- Replace with your image URL -->
+            <div class="trading_context_hed_main">
+                <div class="trading_context_hed">
+                    <p class="context_trading_cards">What is your opinion?</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button_yes">Yes ₹5</button>
+                <button class="button_no">No ₹5</button>
+            </div>
+        </div>
+        <!-- From Uiverse.io by gharsh11032000 --> 
+<div class="card2">
+    <img src="./Images/bitcoin.jpg" alt="">
+    <div class="card__content">
+      <p class="card__title">Bitcoin Trade</p>
+      <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="buttons2">
+        <button class="button_yes2">Yes ₹5</button>
+        <button class="button_no2">No ₹5</button>
+    </div>
+    </div>
+  </div>  
+    </div>
+</body>
+
+</html>

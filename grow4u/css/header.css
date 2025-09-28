@@ -1,0 +1,155 @@
+.nav_bar {
+    display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+}
+
+
+.navigations_bar a {
+    border: none;
+    color: #016aff !important;
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+    cursor: pointer;
+    text-decoration: none;
+            font-size: 1rem;
+}
+.navigations_bar a:hover{
+    color: black;
+}
+
+.navigations_bar {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.navigations_bar > li a:hover{
+    color: black !important;
+}
+.hamburger_close{
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media (max-width: 768px){
+    .navigations_bar {
+        display: none;
+        gap: 15px;
+        list-style: none;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 50px;
+        text-align: center;
+        background: white;
+    }
+    .navigations_bar.active{
+        display: flex;
+    }
+    .hamburger{
+        display: block;
+        z-index: 1;
+    }
+    .trading.active{
+        margin-top: 15px;
+    }
+    .hamburger_close{
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .trading{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .navigations_bar.active > li{
+       gap: 50px;
+    }
+    .trading_button{
+        padding: 0px 5px !important;
+        font-size: 1rem !important;
+    }
+}
+
+.trading_button {
+    border: 2px solid #016aff;
+    /* text-decoration: underline; */
+    color: white;
+    font-size: 20px;
+    /* margin-left: -30px; */
+    box-shadow: 0px 0px 10px 10px #016aff;
+    background: #016aff;
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 0 20px 0 20px;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+    border-radius: 5px;
+}
+
+.navigations_bar > a:hover {
+    color: black;
+}
+
+.trading_button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.trading>a {
+    margin-left: 20px;
+}
+
+button.login_signup_button {
+    color: #016aff;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 0 20px 0 20px;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+    border-radius: 5px;
+    border: 2px dashed #016aff;
+}
+
+button.login_signup_button:hover {
+    box-shadow: 0px 0px 10px 10px #016aff !important;
+    background: #016aff !important;
+    color: white !important;
+}
+ul.trading{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+/* .navigations_bar > a  {
+    border: none;
+    color: #016aff;
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    list-style: none;
+} */
+.trading>a {
+    margin-left: 20px;
+}
